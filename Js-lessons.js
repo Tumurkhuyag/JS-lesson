@@ -1,3 +1,4 @@
+/*
 // -------------------- Lesson 30 --------------------
 
 var name = "Bat";
@@ -150,4 +151,56 @@ console.log(
 ("Dice Game хийсэн");
 
 // -------------------- Lesson 51 --------------------
+
+
 // -------------------- Lesson 52 --------------------
+
+var p1 = {
+  name: "Tom",
+  job: "програм хөгжүүлэгч",
+  info: function() {
+    console.log(this.name + " нэртэй хүн " + this.job + " мэргэжилтэй.");
+  }
+};
+p1.info();
+
+var p2 = {};
+
+p2.name = "Erka";
+p2.job = "Designer";
+p2.info = function() {
+  console.log(this.name + " нэртэй хүн " + this.job + " мэргэжилтэй.");
+};
+
+p2.info();
+String.prototype.sainuu = function() {
+  console.log("Өдрийн мэнд!!!");
+};
+
+console.log("Dev".sainuu());
+*/
+
+// Prototype chain
+var substance = { name: "substance" };
+var animal = Object.create(substance);
+animal.name = "animal";
+
+var human = Object.create(animal);
+human.name = "human";
+
+var soldier = Object.create(human);
+soldier.name = "soldier";
+
+var regularSoldier = Object.create(soldier);
+regularSoldier.id = [];
+
+regularSoldier.id[0] = "Kevin";
+regularSoldier.tushaalAvah = function(tushaal) {
+  console.log(this.id[0] + " явган цэрэг " + tushaal + " гэсэн тушаал авлаа");
+};
+
+console.log(
+  regularSoldier.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__
+);
+
+regularSoldier.tushaalAvah("Эзэл!!!");
