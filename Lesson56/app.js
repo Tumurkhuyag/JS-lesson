@@ -98,7 +98,10 @@ function findBMR(el, i) {
     return Math.round(
       66 + 13.7 * bodyWeight[i] + 5 * bodyHeight[i] - 6.8 * ages[i]
     );
-  else return 655 + 9.6 * bodyWeight[i] + 1.8 * bodyHeight[i] - 4.7 * ages[i];
+  else
+    return Math.round(
+      655 + 9.6 * bodyWeight[i] + 1.8 * bodyHeight[i] - 4.7 * ages[i]
+    );
 }
 
 function calorieAdvice() {
